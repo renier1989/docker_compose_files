@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node-red:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: MSSql-server
+    environment:
+      - MSSQL_SA_PASSWORD=P@ssword
+      - ACCEPT_EULA=Y
+    # volumes:
+    #   - /home/pi/volumes/node-red:/data/node-red
+    hostname: sql1
+    ports:
+      - 14333:1433
+    restart: always

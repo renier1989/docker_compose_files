@@ -1,0 +1,12 @@
+version: "3"
+services:
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node-red
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - /home/pi/volumes/node-red:/data/node-red
+    ports:
+      - 1880:1880
+    restart: always
